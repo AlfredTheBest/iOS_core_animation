@@ -1,6 +1,6 @@
 
-## 寄宿图
-### contents属性
+# 寄宿图
+## contents属性
 CALayer的寄宿图即图层中包含的图。
 
 CALayer有一个属性叫做contents，这个属性的类型被定义为id，意味着它可以是任何类型的对象。在这种情况下，你可以给contents属性赋任何值，你的app仍然能够编译通过。但是，在实践中，如果你给contents赋的不是CGImage，那么你得到的图层将是空白的。
@@ -80,7 +80,7 @@ contentsRect在app中最有趣的地方在于一个叫做image sprites（图片�
 
 默认情况下，contentsCenter是{0,0,1,1}，这意味着如果大小改变了，那么寄宿图将会均匀的拉盛开。他工作起来的效果和UIImage里的-resizableImageWithCapInsets:方法效果非常类似，只是它可以运用到任何寄宿图，甚至包括Core Graphics运行时绘制的图形。
 
-###Custom Drawing
+##Custom Drawing
 给contents赋CGImage的值不是唯一的设置寄宿图的方法。我们也可以直接用Core Graphics直接绘制寄宿图。能够通过继承UIView并实现-drawRect:方法来自定义绘制。
 
 -drawRect: 方法没有默认的实现，因为对UIView来说，寄宿图并不是必须的，它不在意那到底是单调的颜色还是有一个图片的实例。如果UIView检测到-drawRect: 方法被调用了，它就会为视图分配一个寄宿图，这个寄宿图的像素尺寸等于视图大小乘以 contentsScale的值。
@@ -102,7 +102,7 @@ contentsRect在app中最有趣的地方在于一个叫做image sprites（图片�
 ```
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx;
 ```
-###实例
+##实例
 
 ```
 @implementation ViewController

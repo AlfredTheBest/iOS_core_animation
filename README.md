@@ -12,5 +12,6 @@ iOS核心动画高级技巧
 * [隐式动画](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/lesson6)
 * [显式动画](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/lesson7)
 * [图层时间](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/lesson8)
+* [缓冲](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/lesson9)
 
 

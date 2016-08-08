@@ -18,6 +18,10 @@ iOS核心动画高级技巧
 
 
 
+Reference:
+
+* iOS核心动画高级技巧
+* A GUIDE TO iOS ANIMATION
 
 
 

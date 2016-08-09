@@ -16,6 +16,7 @@ iOS核心动画高级技巧
 * [基于定时器的动画](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/theory/lesson10)
 * [性能调优](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/theory/lesson11)
 * [高效绘图](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/theory/lesson12)
+* [图像IO](https://github.com/AlfredTheBest/iOS_core_animation/tree/master/theory/lesson13)
 
 
 

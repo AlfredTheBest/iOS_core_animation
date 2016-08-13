@@ -161,13 +161,27 @@
 - (void)animateSelectedLineToNewIndex:(NSInteger)newIndex
 {
     CGFloat newLineLength = (newIndex - 1) * DISTANCE;
-    CABasicAnimation *anim = [SpringLayerAnimation create:@"selectedLineLength"
-                                                 duration:0.2
-                                                fromValue:@(self.selectedLineLength)
-                                                  toValue:@(newLineLength)];
-    anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    // Spring Animation
+    //    CAKeyframeAnimation *anim = [[KYSpringLayerAnimation sharedAnimManager]
+    //    createSpringAnima:@"selectedLineLength" duration:1.0
+    //    usingSpringWithDamping:0.5 initialSpringVelocity:3
+    //    fromValue:@(self.selectedLineLength) toValue:@(newLineLength)];
+    
+    // Half curve animation
+    CAKeyframeAnimation *anim = [[SpringLayerAnimation sharedAnimManager]
+                                 createHalfCurveAnima:@"selectedLineLength"
+                                 duration:1.0
+                                 fromValue:@(self.selectedLineLength)
+                                 toValue:@(newLineLength)];
+    
+    // line animation
+    //    CAKeyframeAnimation *anim = [[KYSpringLayerAnimation sharedAnimManager]
+    //    createBasicAnima:@"selectedLineLength" duration:0.2
+    //    fromValue:@(self.selectedLineLength) toValue:@(newLineLength)];
+    
     self.selectedLineLength = newLineLength;
     anim.delegate = self;
+    anim.removedOnCompletion = YES;
     [self addAnimation:anim forKey:@"lineAnimation"];
     self.selectedPage = newIndex;
 }

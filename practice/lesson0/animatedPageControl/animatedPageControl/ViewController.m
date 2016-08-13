@@ -27,9 +27,11 @@
     self.pageControl.unSelectedColor = [UIColor colorWithWhite:0.9 alpha:1];
     self.pageControl.selectedColor = [UIColor redColor];
     self.pageControl.bindScrollView = self.demoCollectionView;
+    self.pageControl.shouldShowProgressLine = YES;
     
-    self.pageControl.indicatorStyle = IndicatorStyleRotateRect;
-    self.pageControl.indicatorSize = 15;
+    self.pageControl.indicatorStyle = IndicatorStyleGooeyCircle;
+    self.pageControl.indicatorSize = 20;
+    self.pageControl.swipeEnable = YES;
     [self.pageControl display];
     [self.view addSubview:self.pageControl];
 }
@@ -53,13 +55,34 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
+    //Indicator动画
     [self.pageControl.indicator animateIndicatorWithScrollView:scrollView andIndicator:self.pageControl];
+    
     if (scrollView.dragging || scrollView.isDecelerating || scrollView.tracking) {
+        //背景线条动画
         [self.pageControl.pageControlLine animateSelectedLineWithScrollView:scrollView];
-        
     }
     
 }
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    
+    self.pageControl.indicator.lastContentOffset = scrollView.contentOffset.x;
+    
+}
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    
+    
+    [self.pageControl.indicator restoreAnimation:@(1.0/self.pageControl.pageCount)];
+    
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    self.pageControl.indicator.lastContentOffset = scrollView.contentOffset.x;
+}
+
 
 #pragma mark -
 

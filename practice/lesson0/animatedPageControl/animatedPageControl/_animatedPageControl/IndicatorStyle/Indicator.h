@@ -15,7 +15,11 @@
 
 @property(nonatomic,assign)CGFloat indicatorSize;
 @property(nonatomic,strong)UIColor *indicatorColor;
+@property(nonatomic,assign)CGRect currentRect;
+@property(nonatomic,assign)CGFloat lastContentOffset;
+
 
 -(void)animateIndicatorWithScrollView:(UIScrollView *)scrollView
                          andIndicator:(AnimatedPageControl *)pgctl;
+-(void)restoreAnimation:(id)howmanydistance;
 @end

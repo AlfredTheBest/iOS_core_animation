@@ -61,7 +61,7 @@
     //60个关键帧
     NSInteger numOfPoints  = duration * 60;
     NSMutableArray *values = [NSMutableArray arrayWithCapacity:numOfPoints];
-    for (NSInteger i =0; i < numOfPoints; i++) {
+    for (NSInteger i = 0; i < numOfPoints; i++) {
         [values addObject:@(0.0)];
     }
     
@@ -72,7 +72,7 @@
         
         CGFloat x = (CGFloat)point / (CGFloat)numOfPoints;
         CGFloat value = [toValue floatValue] - d_value * (pow(M_E, -damping * x) * cos(velocity * x)); // y = 1-e^{-5x} * cos(30x)
-        NSLog(@"toValue:%f,diff:%f",[toValue floatValue],d_value * (pow(M_E, -damping * x) * cos(velocity * x)));
+        //        NSLog(@"toValue:%f,diff:%f",[toValue floatValue],d_value * (pow(M_E, -damping * x) * cos(velocity * x)));
         values[point] = @(value);
     }
     

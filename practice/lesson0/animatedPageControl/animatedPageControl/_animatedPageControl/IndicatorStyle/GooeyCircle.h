@@ -9,6 +9,19 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Indicator.h"
 
+typedef enum : NSUInteger
+{
+    ScrollDirectionNone,
+    ScrollDirectionRight,
+    ScrollDirectionLeft,
+    ScrollDirectionUp,
+    ScrollDirectionDown,
+    ScrollDirectionCrazy,
+} ScrollDirection;
+
 @interface GooeyCircle :Indicator
+
+@property(nonatomic,assign)CGFloat factor;
+@property(nonatomic,assign)ScrollDirection scrollDirection;
 
 @end

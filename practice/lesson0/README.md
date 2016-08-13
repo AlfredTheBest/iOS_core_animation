@@ -33,5 +33,6 @@
 ![](lesson0_7.gif)
 
 ##AnimatedPageControl
-
+核心就是贝塞尔曲线变换逻辑，如图。代码[在此](animatedPageControl)。
+![](lesson0_8.png)
 

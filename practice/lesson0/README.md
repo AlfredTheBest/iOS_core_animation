@@ -56,23 +56,10 @@ Quartz2D提供了以下几种类型的Graphics Context：
 ![](lesson0_11.gif)
 把一个复杂的动画分解为几个动画，然后再把这些分动画逐一解决。要会抽象出这动画的过程。此动画用辅助视图完成代码[在此](JKGooeySlideMenuDemo)。
 
+##CuteView
+![](lesson0_13.gif)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+分析如图
+![](lesson0_12.png)
+代码[在此](CuteView)。
 

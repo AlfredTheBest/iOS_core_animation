@@ -37,3 +37,42 @@
 核心就是贝塞尔曲线变换逻辑，如图。代码[在此](animatedPageControl)。
 ![](lesson0_8.png)
 
+##GooeySlideMenu
+
+###Quartz2D
+Quartz 2D是一个二维绘图引擎，同时支持iOS和Mac系统
+
+Quartz2D提供了以下几种类型的Graphics Context：
+
+* Bitmap Graphics Context 位图上下文，在这个上下文上绘制或者渲染的内容，可以获取成图片（需要主动创建一个位图上下文来使用，使用完毕，一定要销毁）
+* PDF Graphics Context
+* Window Graphics Context
+* Layer Graphics Context 图层上下文，针对UI控件的上下文
+* Printer Graphics Context
+
+![](lesson0_10.png)
+
+##解析
+![](lesson0_11.gif)
+把一个复杂的动画分解为几个动画，然后再把这些分动画逐一解决。要会抽象出这动画的过程。此动画用辅助视图完成代码[在此](JKGooeySlideMenuDemo)。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
